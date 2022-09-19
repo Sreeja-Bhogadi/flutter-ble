@@ -167,6 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           FlatButton(
                             child: Text("Send"),
                             onPressed: () {
+                              characteristic.setNotifyValue(true);
                               characteristic.write(
                                   utf8.encode(_writeController.value.text));
                               Navigator.pop(context);
